@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- icon -->
+    <link rel="icon" href="./img/Pokebola-pokeball-png-0.png" >
+    <link rel="icon" href="./img/Pokebola-pokeball-png-0.png" sizes="32x32">
+    <link rel="icon" href="./img/Pokebola-pokeball-png-0.png" sizes="48x48">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <main>
+        <div class="caixaPokedex">
+            <div class="caixaBlock">
+                <audio id="musicaAbertura" autoplay src="./audio/Kevin MacLeod - Itty Bitty 8 Bit  NO COPYRIGHT 8-bit Music.mp3" preload="auto"></audio>
+                <audio id="musicaBattle" src="./audio/wild pokemon battle theme ruby&sapphire&emerald.mp3" preload="auto"></audio>
+                <audio id="victory" src="./audio/Final Fantasy VII - Victory Fanfare.mp3" preload="auto"></audio>
+                <audio id="playerDefeat" src="./audio/BattleSounds/MVP Sound Effect _ Ragnarok Online.mp3" preload="auto"></audio>
+                
+                <audio id="ataque1" src="./audio/BattleSounds/Spore Sound Effect _ Ragnarok Online (320 kbps).mp3" preload="auto"></audio>
+                <audio id="ataque2" src="./audio/BattleSounds/Maya Sound Effect _ Ragnarok Online.mp3" preload="auto"></audio>
+                <audio id="ataque3" src="./audio/BattleSounds/Fireball Skill Sound Effect [Magician] _ Ragnarok Online.mp3" preload="auto"></audio>
+                <audio id="ataque4" src="./audio/BattleSounds/Asura Strike Skill Sound Effect [Monk] _ Ragnarok Online.mp3" preload="auto"></audio>
+                <audio id="ataque5" src="./audio/BattleSounds/Throw Fuuma Shuriken Skill Sound Effect [Ninja] _ Ragnarok Online.mp3" preload="auto"></audio>
+                <audio id="ataque6" src="./audio/BattleSounds/Tiger Knuckle Fist (Glacier Fist) Skill Sound Effect [Champion] _ Ragnarok Online.mp3"></audio>
+                <audio id="missAttack" src="./audio/BattleSounds/Yoyo Sound Effect _ Ragnarok Online.mp3" preload="auto"></audio>
+                <audio id="ataque7" src="./audio/BattleSounds/Gravação (3).m4a" preload="auto"></audio>
+                <audio id="ataque8" src="./audio/BattleSounds/Gravação (4).m4a" preload="auto"></audio>
+               
+
+                <button class="start">START</button>
+                <div class="msgBattle">
+                    <p class="msgAttack"></p>
+                    <p class="msg"></p>
+                </div>
+                <!-- Caixas referentes a estilização dos TIPOS de pokémons -->
+                <div class="caixaPlayer1">
+                    <div class="list-player1 hidden"></div>
+                    <div class="type-container1do1">
+                        <span class="tipo1">...</span>
+                    </div>
+                    <div class="type-container2do1">
+                        <span class="tipo2">...</span>
+                    </div>
+                    <h1 class="pokemon-data1">
+                        <span class="pokemon-id pokemon-id-player1">ID</span> -
+                        <span class="pokemon-name pokemon-name-player1"></span>  
+                    </h1>
+                    <div class="habilidadesPlayer1">
+                        <button class="hability AB1">Attack</button>
+                        <button class="hability1 AB2">...</button>
+                        <button class="hability1 AB3">...</button>
+                        <button class="hability1 AB4">...</button>
+                    </div>
+                    <div class="life1 "><p class="life-player1"></p></div>
+                    <img class="pokemonPlayer1" src="" alt="pokémon-image">
+                    <img class="pokedex1" src="./img/pokedex.png" alt="pokedex">
+                </div>
+
+                <div class="caixaPlayer2">
+                    <div class="list-player2 hidden"></div>
+                    <div class="type-container1do2">
+                        <span class="type1">...</span>
+                    </div>
+                    <div class="type-container2do2">
+                        <span class="type2">...</span>
+                    </div>
+                    <h1 class="pokemon-data2">
+                        <span class="pokemon-id pokemon-id-player2">ID</span> -
+                        <span class="pokemon-name pokemon-name-player2"></span> 
+                    </h1>
+                    <div class="habilidadesPlayer2">
+                        <button class="hability HB1">Attack</button>
+                        <button class="hability2 HB2">...</button>
+                        <button class="hability2 HB3">...</button>
+                        <button class="hability2 HB4">...</button>
+                    </div>
+                    <div class="life2 "><p class="life-player2"></p></div>
+                    <img class="pokemonPlayer2" src="" alt="pokémon-image">
+                    <img class="pokedex2" src="./img/pokedex.png" alt="pokedex">
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script  src="./js/pokeBattle.js"></script>
+</body>
+
+</html>

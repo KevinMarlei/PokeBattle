@@ -1,0 +1,530 @@
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Pixelify+Sans:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100%;
+    background: rgb(92, 168, 203);
+    background: linear-gradient(90deg, rgba(92, 168, 203, 1) 11%, rgba(145, 196, 192, 0.8953956582633054) 27%, rgba(98, 175, 219, 1) 49%, rgba(179, 216, 223, 0.8561799719887955) 71%, rgba(0, 212, 255, 1) 89%);
+}
+
+main {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+}
+
+img {
+    width: 350px;
+}
+
+
+/* classe criada apenas no CSS para quem for derrotado mudar a cor para cinza */
+.pokemon-derrotado {
+    filter: grayscale(100%);
+    /* Torna a imagem em tons de cinza */
+    opacity: 0.5;
+    /* Reduz a opacidade para dar a aparência de derrota */
+}
+
+.pokemonPlayer1 {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    /* background-color: yellow; */
+    translate: 110% 165%;
+    transform: scaleX(-1);
+}
+
+.pokemonPlayer2 {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    /* background-color: yellow; */
+    translate: 140% 165%;
+    z-index: 1;
+}
+
+/* aplicar efeito de dano */
+.pokemonPlayerDamage{
+    filter: brightness(2);
+
+}
+/* Aplicar efeitos de esquiva */
+.pokemonPlayerMiss1{
+    animation: missAttack 0.5s ease-in-out;
+}
+@keyframes missAttack{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-50px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.pokemonPlayerMiss2{
+    animation: missAttack2 0.5s ease-in-out;
+}
+@keyframes missAttack2{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(50px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.caixaPokedex {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixaBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+/* Caixa de mensagem de batalha */
+.msgBattle {
+    background: rgba(179, 216, 223, 0.596);
+    background: linear-gradient(90deg, rgba(179, 216, 223, 0.512) 11%, rgba(0, 212, 255, 0.2959558823529411) 91%);
+    z-index: 2;
+    position: fixed;
+    height: 10%;
+    transform: translate(0%, -450%);
+    /* font-size:1.5vw; */
+    font-size: calc(1rem + 0.8vw);
+    font-family: Pixelify Sans;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.msgAttack .msg{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+/* Caixas referentes a estilização dos TIPOS de pokémons */
+.type-container1do1 {
+    display: flex;
+}
+
+.tipo2 {
+    position: absolute;
+    transform: translate(10%, 520%);
+    /* Corrigido */
+    width: 80px;
+    text-align: center;
+    border-radius: 10%;
+    font-family: Pixelify Sans;
+    font-size:large;
+}
+
+.tipo1 {
+    position: absolute;
+    transform: translate(70%, 520%);
+    /* Corrigido */
+    text-align: center;
+    width: 80px;
+    border-radius: 10%;
+    font-family: Pixelify Sans;
+    font-size:large;
+}
+
+/* container tipos do player 2 */
+.type-container1do2 {
+    display: flex;
+}
+
+.type2 {
+    position: absolute;
+    transform: translate(50%, 520%);
+    /* Corrigido */
+    width: 80px;
+    z-index: 1;
+    border-radius: 10%;
+    font-family: Pixelify Sans;
+    font-size: large;
+}
+
+.type1 {
+    width: 80px;
+    position: absolute;
+    text-align: center;
+    transform: translate(110%, 520%);
+    /* Corrigido */
+    z-index: 1;
+    border-radius: 10%;
+    font-family: Pixelify Sans;
+    font-size: large;
+}
+
+.pokemon-data1 {
+    display: flex;
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    font-size: 25px;
+    transform: translate(25%, 970%);
+    /* Corrigido */
+    color: #3a444d;
+    font-family: Pixelify Sans;
+}
+
+.pokemon-data2 {
+    width: 250px;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    font-size: 25px;
+    transform: translate(35%, 970%);
+    /* Corrigido */
+    color: #3a444d;
+    font-family: Pixelify Sans;
+}
+
+.pokemon-name-player1 {
+    width: 50%;
+    align-items: start;
+    text-align: left;
+}
+
+.pokemon-id {
+    color: #aaa;
+}
+
+/* Espelhando imagem da pokédex */
+.pokedex2 {
+    transform: scaleX(-1);
+}
+
+/* habilidades */
+.habilidadesPlayer1 {
+    position: absolute;
+    width: 250px;
+    height: 120px;
+    display: grid;
+    grid-template-columns: 50px 90px;
+    column-gap: 80px;
+    translate: 2% 300%;
+    margin-left: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+    background-image: url(../img/battle-background.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.habilidadesPlayer1 button {
+    height: 30px;
+    width: 110px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #555;
+    border: 2px solid black;
+    border-radius: 5%;
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 black;
+    text-wrap: nowrap;
+    translate: -7%;
+}
+
+.habilidadesPlayer2 {
+    position: absolute;
+    width: 250px;
+    height: 120px;
+    display: grid;
+    grid-template-columns: 50px 90px;
+    column-gap: 80px;
+    translate: 4.5% 300%;
+    margin-left: 55px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border-radius: 5%;
+    background-image: url(../img/battle-background.webp);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.habilidadesPlayer2 button {
+    height: 30px;
+    width: 110px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #555;
+    border: 2px solid black;
+    border-radius: 5%;
+    box-shadow: 2px 3px 0 #222, 4px 6px 0 black;
+    text-wrap: nowrap;
+    translate: -10%;
+}
+button, .start{
+    height: 500px;
+    background: linear-gradient(90deg, rgba(179, 216, 223, 0.8561799719887955) 11%, rgba(0, 212, 255, 0.2959558823529411) 91%);
+    font-size: large;
+
+}
+
+button {
+    color: whitesmoke;
+}
+
+.habilidadesPlayer1 button:active {
+    box-shadow: inset -4px 4px 0 #222;
+}
+
+.habilidadesPlayer2 button:active {
+    box-shadow: inset 4px 4px 0 #222;
+}
+
+.caixaPlayer1 .life {
+    translate: 18.5% 1350%;
+}
+
+.life1 {
+
+    height: 25px;
+    width: 250px;
+    background-color: rgb(98, 98, 98);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    translate: 14.5% 1335%;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 15px rgb(150, 160, 150);
+}
+
+.life2 {
+    height: 25px;
+    width: 250px;
+    background-color: rgb(98, 98, 98);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    translate: 26.5% 1335%;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 15px rgb(150, 160, 150);
+}
+
+.life-player1,
+.life-player2 {
+    height: 25px;
+    width: 100%;
+    /* Defina a largura máxima da barra de vida */
+    background-color: green;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 15px rgb(150, 160, 150);
+    transition: width 0.3s;
+    /* Adicione uma transição suave para a largura */
+}
+
+/* lista de escolhas */
+
+.list-player1 {
+    z-index: 2;
+    position: absolute;
+    width: 320px;
+    height: 525px;
+    background: linear-gradient(to bottom, #6ab7f5, #fff, rgb(164, 164, 255));
+    translate: 5%;
+    border-radius: 5%;
+}
+
+.list-player1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 525px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.list-player2 {
+    z-index: 2;
+    position: absolute;
+    width: 320px;
+    height: 525px;
+    background: linear-gradient(to bottom, #6ab7f5, #fff, rgb(164, 164, 255));
+    translate: 5%;
+    border-radius: 5%;
+}
+
+.list-player2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 525px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+/* background doas types */
+.normal {
+    background-color: #a6a877;
+}
+
+.grass {
+    background-color: #77c850;
+}
+
+.fire {
+    background-color: #ee7f30;
+}
+
+.water {
+    background-color: #678fee;
+}
+
+.electric {
+    background-color: #eabf12;
+}
+
+.ice {
+    background-color: #98d5d7;
+}
+
+.ground {
+    background-color: #dfbf69;
+}
+
+.flying {
+    background-color: #a98ff0;
+}
+
+.poison {
+    background-color: #a040a0;
+}
+
+.fighting {
+    background-color: #bf3029;
+}
+
+.psychic {
+    background-color: #f65687;
+}
+
+.dark {
+    background-color: #725847;
+}
+
+.rock {
+    background-color: #b8a137;
+}
+
+.bug {
+    background-color: #a8b720;
+}
+
+.ghost {
+    background-color: #6e5896;
+}
+
+.steel {
+    background-color: #b9b7cf;
+}
+
+.dragon {
+    background-color: #6f38f6;
+}
+
+.fairy {
+    background-color: #f9aec7;
+}
+
+/* Estilos para o iPhone SE e dispositivos com largura máxima de 375px */
+@media (max-width: 375px) {
+    main {
+        transform: scale(0.6);
+        /* Reduza o tamanho de todos os elementos dentro de main em 50% */
+        transform-origin: center;
+        /* Centralize o ponto de transformação */
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        /* Evite que o conteúdo seja rolado para fora da tela */
+    }
+
+    .caixaPokedex {
+        height: 100%;
+        /* Defina a altura como 100% */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .msgBattle{
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+}
+
+@media (max-width: 694px) {
+    main {
+        transform: scale(0.95, 0.5);
+        /* Reduza o tamanho de todos os elementos dentro de main em 50% */
+        transform-origin: center;
+        /* Centralize o ponto de transformação */
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        /* Evite que o conteúdo seja rolado para fora da tela */
+    }
+
+    .caixaPokedex {
+        height: 100%;
+        /* Defina a altura como 100% */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
